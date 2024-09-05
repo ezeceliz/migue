@@ -3,6 +3,7 @@ package com.soft.engineer.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +26,6 @@ public class CartController {
 		
 		Cart cart = servicio.get(id);
 		
-		System.out.println(cart);
-		
 		if(cart.getProducts() == null) {
 			cart.setProducts(new ArrayList<Product>());
 		}
@@ -34,6 +33,11 @@ public class CartController {
 		cart.getProducts().add(product);
 		
 		return cart;
+	}
+	
+	@DeleteMapping("/delete-cart/{id}")
+	public void deleteCart(@PathVariable int id) {
+		servicio.remove(id);
 	}
 	
 	@GetMapping("/cart/{id}")
@@ -51,6 +55,4 @@ public class CartController {
 		
 		return cart.toString();
 	}
-
-
 }
