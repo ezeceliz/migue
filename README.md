@@ -20,11 +20,11 @@ _Necesitas tener instalados en tu máquina_
 Una vez que clonas el proyecto con git en tu máquina, ingresas al directorio raiz y ejecutas el comando **mvn spring-boot:run**
 Esto va a lanzar la app y abre un servidor web que escucha en localhost en el puerto 8080 por defecto
 
-#### Crear Carrito ####
+* #### Crear Carrito ####
 Desde el navegador podes crear carritos ingresando a http://localhost:8080/cart/1
 _En este caso el /1 corresponde al id del carrito, es decir que se va a crear con este número de id_
 
-#### Agregar Productos al Carrito ####
+* #### Agregar Productos al Carrito ####
 Luego desde **Postman** podes hacer una Request de tipo **UPDATE** para agregarle productos al carrito en http://localhost:8080/update-cart/1 (el 1 en este caso es el id del carrito que creamos anteriormente)
 
 Para asignar productos mandas como parámetro de tipo JSON por ejemplo:
@@ -38,11 +38,11 @@ Para asignar productos mandas como parámetro de tipo JSON por ejemplo:
 
 _Esto lo podes ejecutar varias veces cambiando los valores y se van a ir agregando productos al carrito que elegiste actualizar_
 
-#### Mostrar información de un Carrito específico ####
+* #### Mostrar información de un Carrito específico ####
 
 Desde el navegador si ingresas a http://localhost:8080/cart/info/1 te va a dar la información del Carrito y sus Productos
 
-#### Eliminar Carrito ####
+* #### Eliminar Carrito ####
 
 _Los carritos y sus productos duran en memoria 10 minutos, si queres ver la información de un carrito que esta almacenado pasado los 10 minutos te va a dar una nueva instancia._
 
