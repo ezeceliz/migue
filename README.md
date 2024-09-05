@@ -25,20 +25,25 @@ Desde el navegador podes crear carritos ingresando a http://localhost:8080/cart/
 _En este caso el /1 corresponde al id del carrito, es decir que se va a crear con este número de id_
 
 #### Agregar Productos al Carrito ####
-Luego desde **Postman** podes hacer una Request de tipo UPDATE para agregarle productos al carrito en http://localhost:8080/update-cart/1 (el 1 en este caso es el id del carrito que creamos anteriormente)
+Luego desde **Postman** podes hacer una Request de tipo **UPDATE** para agregarle productos al carrito en http://localhost:8080/update-cart/1 (el 1 en este caso es el id del carrito que creamos anteriormente)
 
 Para asignar productos mandas como parámetro de tipo JSON por ejemplo:
+```
 {
     "id" : 54,
     "description" : "product-test-54",
     "amount" : 113.12
 }
+```
 
-Esto lo podes ejecutar varias veces cambiando los valores y se van a ir agregando productos al carrito que elegiste actualizar
+_Esto lo podes ejecutar varias veces cambiando los valores y se van a ir agregando productos al carrito que elegiste actualizar_
 
 #### Mostrar información de un Carrito específico ####
 
-Desde el navegador si ingresas a http://localhost:8080/cart/info/1 te va a dar la información del Carrito y sus productos
+Desde el navegador si ingresas a http://localhost:8080/cart/info/1 te va a dar la información del Carrito y sus Productos
 
 #### Eliminar Carrito ####
 
+_Los carritos y sus productos duran en memoria 10 minutos, si queres ver la información de un carrito que esta almacenado pasado los 10 minutos te va a dar una nueva instancia._
+
+Para borrar un carrito de manera manual a través de **Postman** mandas una Request de tipo **DELETE** en http://localhost:8080/delete-cart/1 y borrarías de la cache el carrito con id 1
