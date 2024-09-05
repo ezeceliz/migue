@@ -20,38 +20,25 @@ _Necesitas tener instalados en tu máquina_
 Una vez que clonas el proyecto con git en tu máquina, ingresas al directorio raiz y ejecutas el comando **mvn spring-boot:run**
 Esto va a lanzar la app y abre un servidor web que escucha en localhost en el puerto 8080 por defecto
 
+#### Crear Carrito ####
 Desde el navegador podes crear carritos ingresando a http://localhost:8080/cart/1
 _En este caso el /1 corresponde al id del carrito, es decir que se va a crear con este número de id_
 
-Luego desde Postman podes hacer una request de tipo UPDATE para agregarle productos al carrito
+#### Agregar Productos al Carrito ####
+Luego desde **Postman** podes hacer una Request de tipo UPDATE para agregarle productos al carrito en http://localhost:8080/update-cart/1 (el 1 en este caso es el id del carrito que creamos anteriormente)
 
-```
-Da un ejemplo
-```
+Para asignar productos mandas como parámetro de tipo JSON por ejemplo:
+{
+    "id" : 54,
+    "description" : "product-test-54",
+    "amount" : 113.12
+}
 
-_Y repite_
+Esto lo podes ejecutar varias veces cambiando los valores y se van a ir agregando productos al carrito que elegiste actualizar
 
-```
-hasta finalizar
-```
+#### Mostrar información de un Carrito específico ####
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Desde el navegador si ingresas a http://localhost:8080/cart/info/1 te va a dar la información del Carrito y sus productos
 
-## Ejecutando las pruebas ⚙️
+#### Eliminar Carrito ####
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
